@@ -17,7 +17,7 @@ This project demonstrates SQL queries for analyzing and visualizing COVID-19 dat
 ## Queries Overview:
 
 ### 1. **Basic Data Retrieval**
-```
+``` sql
 -- Fetching all columns from the CovidFatalities table, ordered by columns 3 and 4
 SELECT * 
 FROM SQLPortfolio..CovidFatalities
