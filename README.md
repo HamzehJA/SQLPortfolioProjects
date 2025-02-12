@@ -17,15 +17,17 @@ This project demonstrates SQL queries for analyzing and visualizing COVID-19 dat
 ## Queries Overview:
 
 ### 1. **Basic Data Retrieval**
-```sql
+```
 -- Fetching all columns from the CovidFatalities table, ordered by columns 3 and 4
 SELECT * 
 FROM SQLPortfolio..CovidFatalities
 ORDER BY 3, 4;
 
- Case vs Death Analysis (Death Percentage)
-sql
-Copy
+
+Case vs Death Analysis (Death Percentage)
+
+### 2. **Case vs Death Analysis (Death Percentage)**
+```
 -- Looking at the likelihood of Covid-related deaths in China
 SELECT Location, date, total_cases, total_deaths, 
        (total_deaths/total_cases)*100 AS DeathPercentage
@@ -34,8 +36,7 @@ WHERE Location = 'China'
 ORDER BY 1, 2;
 
 3. U.S. Data Analysis (Infection and Death Percentages)
-sql
-Copy
+
 -- Analyzing infection and death rates in the United States
 SELECT Location, date, population, total_cases, 
        (total_cases/population)*100 AS InfectionPercentage, 
@@ -44,9 +45,10 @@ SELECT Location, date, population, total_cases,
 FROM SQLPortfolio..CovidFatalities
 WHERE Location = 'United States'
 ORDER BY 1, 2;
+
+
 4. Global COVID Breakdown
-sql
-Copy
+
 -- Global cases, deaths, and death percentages by date
 SELECT date, SUM(new_cases) AS GlobalCases, SUM(cast(new_deaths AS INT)) AS GlobalDeaths, 
        SUM(cast(new_deaths AS INT)) / SUM(new_cases)*100 AS GlobalDeathPercentage
