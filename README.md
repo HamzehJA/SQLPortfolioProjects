@@ -21,22 +21,24 @@ This project demonstrates SQL queries for analyzing and visualizing COVID-19 dat
 -- Fetching all columns from the CovidFatalities table, ordered by columns 3 and 4
 SELECT * 
 FROM SQLPortfolio..CovidFatalities
-ORDER BY 3, 4; ```
+ORDER BY 3, 4;
+```
 
 --
 Case vs Death Analysis (Death Percentage)
 
 ### 2. **Case vs Death Analysis (Death Percentage)**
-```
+``` sql
 -- Looking at the likelihood of Covid-related deaths in China
 SELECT Location, date, total_cases, total_deaths, 
        (total_deaths/total_cases)*100 AS DeathPercentage
 FROM SQLPortfolio..CovidFatalities
 WHERE Location = 'China'
-ORDER BY 1, 2; ```
+ORDER BY 1, 2;
+```
 
-3. U.S. Data Analysis (Infection and Death Percentages)
-
+### 3. U.S. Data Analysis (Infection and Death Percentages)
+``` sql
 -- Analyzing infection and death rates in the United States
 SELECT Location, date, population, total_cases, 
        (total_cases/population)*100 AS InfectionPercentage, 
@@ -45,10 +47,10 @@ SELECT Location, date, population, total_cases,
 FROM SQLPortfolio..CovidFatalities
 WHERE Location = 'United States'
 ORDER BY 1, 2;
+```
 
-
-4. Global COVID Breakdown
-
+### 4. Global COVID Breakdown
+``` sql
 -- Global cases, deaths, and death percentages by date
 SELECT date, SUM(new_cases) AS GlobalCases, SUM(cast(new_deaths AS INT)) AS GlobalDeaths, 
        SUM(cast(new_deaths AS INT)) / SUM(new_cases)*100 AS GlobalDeathPercentage
@@ -56,6 +58,8 @@ FROM SQLPortfolio..CovidFatalities
 WHERE continent IS NOT NULL
 GROUP BY date
 ORDER BY 1, 2;
+```
+
 Running the Queries:
 Requirements:
 SQL Server or compatible SQL environment.
