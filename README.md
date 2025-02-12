@@ -60,11 +60,14 @@ GROUP BY date
 ORDER BY 1, 2;
 ```
 
-Running the Queries:
-Requirements:
-SQL Server or compatible SQL environment.
-Access to the SQLPortfolio..CovidFatalities and SQLPortfolio..CovidVaccinations datasets.
-How to Run:
-Clone the repository to your local machine.
-Open your SQL environment.
-Execute the queries one by one to see the results and insights.
+## Data visualized 
+
+
+# Running the Queries:
+
+## Requirements: 
+SQL Server or compatible SQL environment. Access to the SQLPortfolio..CovidFatalities and SQLPortfolio..CovidVaccinations datasets.
+
+## How to Run:
+Clone the repository to your local machine. Open your SQL environment. Execute the queries one by one to see the results and insights.
+
