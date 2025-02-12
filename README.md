@@ -32,3 +32,33 @@ SELECT Location, date, total_cases, total_deaths,
 FROM SQLPortfolio..CovidFatalities
 WHERE Location = 'China'
 ORDER BY 1, 2;
+
+3. U.S. Data Analysis (Infection and Death Percentages)
+sql
+Copy
+-- Analyzing infection and death rates in the United States
+SELECT Location, date, population, total_cases, 
+       (total_cases/population)*100 AS InfectionPercentage, 
+       total_deaths, 
+       (total_deaths/total_cases)*100 AS DeathPercentage
+FROM SQLPortfolio..CovidFatalities
+WHERE Location = 'United States'
+ORDER BY 1, 2;
+4. Global COVID Breakdown
+sql
+Copy
+-- Global cases, deaths, and death percentages by date
+SELECT date, SUM(new_cases) AS GlobalCases, SUM(cast(new_deaths AS INT)) AS GlobalDeaths, 
+       SUM(cast(new_deaths AS INT)) / SUM(new_cases)*100 AS GlobalDeathPercentage
+FROM SQLPortfolio..CovidFatalities
+WHERE continent IS NOT NULL
+GROUP BY date
+ORDER BY 1, 2;
+Running the Queries:
+Requirements:
+SQL Server or compatible SQL environment.
+Access to the SQLPortfolio..CovidFatalities and SQLPortfolio..CovidVaccinations datasets.
+How to Run:
+Clone the repository to your local machine.
+Open your SQL environment.
+Execute the queries one by one to see the results and insights.
