@@ -23,7 +23,7 @@ SELECT *
 FROM SQLPortfolio..CovidFatalities
 ORDER BY 3, 4; ```
 
-
+--
 Case vs Death Analysis (Death Percentage)
 
 ### 2. **Case vs Death Analysis (Death Percentage)**
